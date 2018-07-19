@@ -2,14 +2,12 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-const welcome = 'Welcome to React'
-
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Welcome />
+          <Welcome text="Welcom to using props, Welcome to React"/>
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <p className="App-intro">
@@ -23,7 +21,7 @@ class App extends Component {
 class Welcome extends Component {
   render() {
     return (
-      <h1 className="App-title">{welcome}</h1>
+      <h1 className="App-title">{this.props.text}</h1>
     )
   }
 }
