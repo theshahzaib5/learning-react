@@ -9,6 +9,10 @@ class App extends Component {
     console.log('Costructer Costructer Costructer')
   }
 
+  componentWillMount() {
+    console.log('Component will mount')
+  }
+
   state = {
     toggleButton: true,
   }
