@@ -13,6 +13,10 @@ class App extends Component {
     console.log('Component will mount')
   }
 
+  componentDidMount() {
+    console.log('Component did mount calls when mounted')
+  }
+
   state = {
     toggleButton: true,
   }
