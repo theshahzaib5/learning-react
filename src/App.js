@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Welcome text="Welcom to using props, Welcome to React"/>
+          <Welcome toggleButton={this.state.toggleButton} text="Welcom to using props, Welcome to React"/>
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <p className="App-intro">
@@ -28,7 +28,6 @@ class App extends Component {
           <p>This should show and hide (a toggle)</p>
         }
 
-
         <button onClick={this.toggleButton}>Toggle</button>
       </div>
     )
@@ -37,7 +36,8 @@ class App extends Component {
 
 class Welcome extends Component {
   render() {
-    const {text} = this.props
+    const {text, toggleButton} = this.props
+    console.log('Parent Component State', toggleButton)
 
     return (
       <h1 className="App-title">{text}</h1>
