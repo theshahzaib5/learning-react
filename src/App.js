@@ -3,6 +3,12 @@ import logo from './logo.svg'
 import './App.css'
 
 class App extends Component {
+  constructer(props) {
+    super(props)
+
+    console.log('Costructer Costructer Costructer')
+  }
+
   state = {
     toggleButton: true,
   }
