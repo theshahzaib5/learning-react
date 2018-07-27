@@ -9,13 +9,6 @@ class LearningArrays extends Component {
 
   render() {
     const arrayToLoop = ['Welcome! ', 'here ', 'is ', 'my ', 'first ', 'array ', 'Loop']
-    var arrayLoopRender = []
-
-    arrayToLoop.forEach(function(word, i) {
-      arrayLoopRender.push(
-        <span key={i}>{word}</span>
-      )
-    })
 
     return (
       <div onClick={this.consoleLog}>
