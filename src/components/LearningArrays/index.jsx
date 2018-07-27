@@ -7,7 +7,9 @@ class LearningArrays extends Component {
     super(props)
 
     this.state = {
-      arrayToLoop: ['Welcome! ', 'here ', 'is ', 'my ', 'first ', 'array ', 'Loop']
+      arrayToLoop: ['Welcome! ', 'here ', 'is ', 'my ', 'first ', 'array ', 'Loop'],
+      userName: 'Shah Zaib',
+      profession: 'Front end developer'
     }
   }
 
@@ -15,19 +17,31 @@ class LearningArrays extends Component {
     console.log('Print in console on onClick')
   }
 
-  render() {
-    return (
-      <div onClick={this.consoleLog}>
-        <p>here is my first separate component</p>
+  handleClick = () => {
+    this.setState({
+      userName: 'Shahzaib Khalid'
+    })
+  }
 
-        <div>
-          { _.map(this.state.arrayToLoop, (word, i) => {
+  render() {
+    const { arrayToLoop, userName, profession } = this.state
+
+    return (
+      <div>
+        <p onClick={this.consoleLog}>This will be click able and will print a console log</p>
+
+        <p>
+          { _.map(arrayToLoop, (word, i) => {
               return (
                 <span key={i}>{word}</span>
               )
             })
           }
-        </div>
+        </p>
+
+        <p>{userName} - {profession}</p>
+
+        <button onClick={this.handleClick}>Change userName</button>
       </div>
     )
   }
