@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../../App.css'
+import _ from 'underscore'
 
 class LearningArrays extends Component {
   consoleLog = () => {
@@ -18,9 +19,16 @@ class LearningArrays extends Component {
 
     return (
       <div onClick={this.consoleLog}>
-        here is my first separate component
+        <p>here is my first separate component</p>
 
-        <p>{arrayLoopRender}</p>
+        <div>
+          { _.map(arrayToLoop, (word, i) => {
+              return (
+                <span key={i}>{word}</span>
+              )
+            })
+          }
+        </div>
       </div>
     )
   }
