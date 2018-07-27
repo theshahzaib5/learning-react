@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import TicTacToe from './components/TicTacToe'
 
 class App extends Component {
   constructor(props) {
@@ -43,6 +44,8 @@ class App extends Component {
         }
 
         <button onClick={this.toggleButton}>Toggle</button>
+
+        <TicTacToe />
       </div>
     )
   }
