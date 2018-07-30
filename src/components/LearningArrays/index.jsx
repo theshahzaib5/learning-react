@@ -8,8 +8,6 @@ class LearningArrays extends Component {
 
     this.state = {
       arrayToLoop: ['Welcome! ', 'here ', 'is ', 'my ', 'first ', 'array ', 'Loop'],
-      userName: 'Shah Zaib',
-      profession: 'Front end developer'
     }
   }
 
@@ -17,14 +15,8 @@ class LearningArrays extends Component {
     console.log('Print in console on onClick')
   }
 
-  handleClick = () => {
-    this.setState({
-      userName: 'Shahzaib Khalid'
-    })
-  }
-
   render() {
-    const { arrayToLoop, userName, profession } = this.state
+    const { arrayToLoop } = this.state
 
     return (
       <div>
@@ -38,10 +30,6 @@ class LearningArrays extends Component {
             })
           }
         </p>
-
-        <p>{userName} - {profession}</p>
-
-        <button onClick={this.handleClick}>Change userName</button>
       </div>
     )
   }

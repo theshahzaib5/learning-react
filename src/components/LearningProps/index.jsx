@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../../App.css'
-import _ from 'underscore'
 
 class LearningProps extends Component {
   constructor(props) {
@@ -10,7 +9,10 @@ class LearningProps extends Component {
       nameDisplayed: 'First Name',
     }
   }
-
+  
+  componentWillReceiveProps(nextProps) {
+    console.log('props will displayed here', nextProps)
+  }
 
 
   render() {

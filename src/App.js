@@ -21,7 +21,8 @@ class App extends Component {
 
   state = {
     toggleButton: true,
-    userName: "Shah Zaib",
+    userName: 'Shah Zaib',
+    profession: 'Front end developer'
   }
 
   toggleButton = () => {
@@ -30,8 +31,14 @@ class App extends Component {
     })
   }
 
+  handleClick = () => {
+    this.setState({
+      userName: 'Shahzaib Khalid'
+    })
+  }
+
   render() {
-    const {toggleButton, userName} = this.state
+    const {toggleButton, userName, profession} = this.state
     return (
       <div className="App">
         <header className="App-header">
@@ -48,9 +55,13 @@ class App extends Component {
 
         <button onClick={this.toggleButton}>Toggle</button>
 
-        <p><LearningArrays /></p>
+        <p>{userName} - {profession}</p>
 
-        <p><LearningProps userName={userName} /></p>
+        <button onClick={this.handleClick}>Change userName</button>
+
+        <LearningArrays style={{marginBottom: 15,}} />
+
+        <LearningProps style={{marginBottom: 15,}} userName={userName} />
       </div>
     )
   }
