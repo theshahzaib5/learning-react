@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import LearningArrays from './components/LearningArrays'
+import LearningProps from './components/LearningProps'
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends Component {
 
   state = {
     toggleButton: true,
+    userName: "Shah Zaib",
   }
 
   toggleButton = () => {
@@ -29,7 +31,7 @@ class App extends Component {
   }
 
   render() {
-    const {toggleButton} = this.state
+    const {toggleButton, userName} = this.state
     return (
       <div className="App">
         <header className="App-header">
@@ -46,7 +48,9 @@ class App extends Component {
 
         <button onClick={this.toggleButton}>Toggle</button>
 
-        <LearningArrays />
+        <p><LearningArrays /></p>
+
+        <p><LearningProps userName={userName} /></p>
       </div>
     )
   }
