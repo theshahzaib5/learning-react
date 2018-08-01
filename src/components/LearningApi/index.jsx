@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import _ from 'underscore'
 import Select from 'react-select'
+
+import { fetchInfo } from '../../actions/actionsInfo'
 
 import {
   Container,
@@ -11,37 +14,18 @@ import {
   Col,
 } from 'reactstrap'
 
-import '../../App.css'
-
 class LearningApi extends Component {
   constructor(props){
     super(props)
 
     this.state = {
       selectedOption: [],
-      // initializing of json data
-      jsonList: [],
     }
   }
 
   componentDidMount() {
     // this is for fetching json from a url
-    fetch('http://www.json-generator.com/api/json/get/coOfPEdCGa?indent=2', {
-      method: 'GET'
-    })
-    // this will get the response from json file url
-    .then(response => response.json())
-    // this will print json in console.
-    .then(json => {
-      console.log('json json json', json)
-      this.setState({
-        jsonList: json,
-      })
-    })
-    // if there are any errors .catch will through an error on console and json will not printed there untill the error is removed
-    .catch(error => {
-      console.log('error error error', error)
-    })
+    this.props.fetchInfo()
   }
 
   handleChange = (selectedOption) => {
@@ -49,9 +33,12 @@ class LearningApi extends Component {
   }
 
   render() {
-    let self = this
-    const { jsonList, selectedOption } = self.state
-    const selectList = _.map(jsonList, (item, i) => { return {value: item.name, label: item.name }})
+    const {props: {users}} = this
+    const { selectedOption } = this.state
+
+    if (users.length === 0)
+      return false
+    const selectList = _.map(users, (item, i) => { return {value: item.name, label: item.name }})
 
     return (
       <Container className="text-left" style={{paddingTop: 20}}>
@@ -82,7 +69,7 @@ class LearningApi extends Component {
 
           <tbody>
             {/* Loop to list json items */}
-            { _.map(jsonList, (item, i) => {
+            { _.map(users, (item, i) => {
                 if(selectedOption.length <= 0 || item.name === selectedOption.value) {
                   return (
                     <tr key={item.name}>
@@ -104,4 +91,16 @@ class LearningApi extends Component {
   }
 }
 
-export default LearningApi
+function mapStateToProps(state) {
+  return {
+    users: state.info
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchInfo: () => dispatch(fetchInfo())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LearningApi)
