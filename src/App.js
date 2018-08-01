@@ -16,6 +16,7 @@ class App extends Component {
       toggleButton: true,
       userName: 'Shah Zaib',
       profession: 'Front end developer',
+      currentTab: 'index'
     }
   }
 

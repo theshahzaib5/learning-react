@@ -39,7 +39,15 @@ class HeaderNav extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink href="/components/">Home</NavLink>
+                <NavLink href="#" onClick={() => this.setState({currentTab: 'index'})}>Home</NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink href="#" onClick={() => this.setState({currentTab: 'slider'})}>Slider</NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink href="#" onClick={() => this.setState({currentTab: 'profile'})}>Profile</NavLink>
               </NavItem>
 
               <UncontrolledDropdown nav inNavbar>
