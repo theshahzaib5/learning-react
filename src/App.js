@@ -38,6 +38,8 @@ class App extends Component {
       <div>
         <HeaderNav />
 
+        <LearningApi />
+
         <div className="App">
           <header className="App-header">
             <Welcome toggleButton={this.state.toggleButton} text="Welcom to using props, Welcome to React"/>
@@ -61,8 +63,6 @@ class App extends Component {
           <LearningArrays style={{marginBottom: 15,}} />
 
           <LearningProps style={{marginBottom: 15,}} userName={userName} />
-
-          <LearningApi />
         </div>
       </div>
     )

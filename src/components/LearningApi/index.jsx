@@ -54,7 +54,7 @@ class LearningApi extends Component {
     const selectList = _.map(jsonList, (item, i) => { return {value: item.name, label: item.name }})
 
     return (
-      <Container className="text-left">
+      <Container className="text-left" style={{paddingTop: 20}}>
         <Row>
           <Col sm='4'>
             <FormGroup>
@@ -83,7 +83,7 @@ class LearningApi extends Component {
           <tbody>
             {/* Loop to list json items */}
             { _.map(jsonList, (item, i) => {
-                if(item.name === selectedOption.value) {
+                if(selectedOption.length <= 0 || item.name === selectedOption.value) {
                   return (
                     <tr key={item.name}>
                       <td>{i}</td>
