@@ -3,8 +3,7 @@ import logo from './logo.svg'
 
 import LearningArrays from './components/LearningArrays'
 import LearningProps from './components/LearningProps'
-import HeaderNav from './components/HeaderNav'
-import LearningApi from './components/LearningApi'
+import RouterPage from './components/RouterPage'
 
 import './App.css'
 
@@ -16,7 +15,7 @@ class App extends Component {
       toggleButton: true,
       userName: 'Shah Zaib',
       profession: 'Front end developer',
-      currentTab: 'index'
+      currentTab: 'home'
     }
   }
 
@@ -34,12 +33,11 @@ class App extends Component {
 
   render() {
     const {toggleButton, userName, profession} = this.state
+    console.log(this.props)
 
     return (
       <div>
-        <HeaderNav />
-
-        <LearningApi />
+        <RouterPage />
 
         <div className="App">
           <header className="App-header">

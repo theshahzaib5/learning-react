@@ -19,7 +19,7 @@ class HeaderNav extends Component {
     super(props)
 
     this.state = {
-      isOpen: false
+      isOpen: false,
     }
   }
 
@@ -31,7 +31,7 @@ class HeaderNav extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{paddingBottom: 20,}}>
         <Navbar color="dark" dark expand="md">
           <NavbarBrand href="/">Learning React</NavbarBrand>
           <NavbarToggler onClick={this.toggleNav} />
@@ -39,15 +39,15 @@ class HeaderNav extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink href="#" onClick={() => this.setState({currentTab: 'index'})}>Home</NavLink>
+                <NavLink href="/api">Api</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="#" onClick={() => this.setState({currentTab: 'slider'})}>Slider</NavLink>
+                <NavLink href="/array">Array</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="#" onClick={() => this.setState({currentTab: 'profile'})}>Profile</NavLink>
+                <NavLink href="#">Profile</NavLink>
               </NavItem>
 
               <UncontrolledDropdown nav inNavbar>

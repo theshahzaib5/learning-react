@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import '../../App.css'
 import _ from 'underscore'
 
+import {
+  Container
+} from 'reactstrap'
+
 class LearningArrays extends Component {
   constructor(props) {
     super(props)
@@ -19,7 +23,7 @@ class LearningArrays extends Component {
     const { arrayToLoop } = this.state
 
     return (
-      <div>
+      <Container>
         <p onClick={this.consoleLog}>This will be click able and will print a console log</p>
 
         <p>
@@ -30,7 +34,7 @@ class LearningArrays extends Component {
             })
           }
         </p>
-      </div>
+      </Container>
     )
   }
 }
